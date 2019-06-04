@@ -5,6 +5,7 @@ public class Greeting {
     private String id;
     private String content;
     private String horse;
+    private String ghost;
 
     public String getId() {
         return id;
@@ -28,6 +29,14 @@ public class Greeting {
 
     public void setHorse(String horse){
         this.horse=horse;
+    }
+
+    public String getGhost(){
+        return ghost;
+    }
+
+    public void setGhost(String ghost){
+        this.ghost=ghost;
     }
 
 }
