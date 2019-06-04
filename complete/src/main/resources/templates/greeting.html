@@ -9,6 +9,10 @@
 <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
     <p>What is Ultrasonography/Ultrasound? <input type="text" th:field="*{id}" /></p>
     <p>What are common ultrasound procedures? <input type="text" th:field="*{content}" /></p>
+    <p>Do you like horses?</p>
+    <input type="radio" th:field="*{horse}" value="yes"> Yes<br>
+    <input type="radio" th:field="*{horse}" value="no"> No<br>
+    <input type="radio" th:field="*{horse}" value="truth"> Those demons eat fingers!!<br>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 </body>
