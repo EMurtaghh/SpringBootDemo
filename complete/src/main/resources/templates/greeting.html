@@ -20,6 +20,18 @@
     <input type="radio" th:field="*{ghost}" value="'Yes, please' Correct :D"> Yes, please<br>
     <input type="radio" th:field="*{ghost}" value="'No, thank you' Incorrect D:"> No, thank you<br>
 
+    <p>Number of horses in your family:</p>
+    <select th:field="*{number}">
+        <option th:each="i : ${#numbers.sequence(0, 100)}" th:value="${i}" th:text="${i}">
+        </option>
+    </select>
+
+    <p>Thoughts?</p>
+    <select th:field="*{thot}">
+        <option th:value="'Good, this is a learning exercise'" th:text="Yes"></option>
+        <option th:value="'...Are you sure?'" th:text="No"></option>
+    </select>
+
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 </body>
