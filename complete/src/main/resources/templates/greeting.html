@@ -32,6 +32,16 @@
         <option th:value="'...Are you sure?'" th:text="No"></option>
     </select>
 
+    <p>What's a good horse city?</p>
+    <input th:field="*{city}" list="cities" />
+    <datalist id="cities">
+        <option value="Naples" />
+        <option value="London" />
+        <option value="Berlin" />
+        <option value="New York" />
+        <option value="Frattamaggiore" />
+    </datalist>
+
     <p>What is your favorite horse breed?</p>
     <br> <textarea th:field="*{bog}" rows="10" cols="30">
     </textarea>

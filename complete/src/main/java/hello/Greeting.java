@@ -9,6 +9,15 @@ public class Greeting {
     private String number;
     private String thot;
     private String bog;
+    private String city;
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     public String getBog() {
         return bog;
