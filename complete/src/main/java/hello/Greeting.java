@@ -19,6 +19,15 @@ public class Greeting {
         this.city = city;
     }
 
+    public void checkCity(){
+        String current= getCity();
+        if(current.equals("Ithaca")){
+            setCity("Correct City");
+        } else {
+            setCity("Incorrect City");
+        }
+    }
+
     public String getBog() {
         return bog;
     }
