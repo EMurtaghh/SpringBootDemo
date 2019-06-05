@@ -7,6 +7,8 @@
 <body>
 <h1>Questions</h1>
 <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+    <img src="../static/images/horse.jpg" width="1000" th:src="@{images/horse.jpg}"/>
+
     <p>What is Ultrasonography/Ultrasound? <input type="text" th:field="*{id}" /></p>
 
     <p>What are common ultrasound procedures? <input type="text" th:field="*{content}" /></p>
