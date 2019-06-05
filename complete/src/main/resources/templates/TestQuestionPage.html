@@ -26,37 +26,91 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <form>
+                <form name="questionForm" onsubmit="return validateForm()">
                     <p>
                         Question #XX
                         <br />
                         Runs down the back of the leg, behind the carpus and cannon, branches below the fetlock and inserts into the distal side of the 1st phalanx and proximal side of the 2nd phalanx.
                     </p>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="incorrect">
                         <label class="form-check-label" for="option1radio">
                             Common digital extensor
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="incorrect">
                         <label class="form-check-label" for="option2radio">
                             Lateral digit extensor
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option3">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="incorrect">
                         <label class="form-check-label" for="option3radio">
                             Deep digital extensor
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option4">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="correct">
                         <label class="form-check-label" for="option4radio">
                             Superficial digital extensor
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <script>
+                                function validateForm() {
+                                    var corrOpt = document.getElementById('exampleRadios4');
+                                    corrOpt.dataset.target = "#correctModal";
+                                    if (document.getElementById('exampleRadios4').checked) {
+                                        $('#correctModal').modal('show')
+                                    } else {
+                                        $('#incorrectModal').modal('show')
+                                    }
+                                }
+                            </script>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#correctModal">
+                                Submit
+                            </button>
+                            <!-- Correct Modal -->
+                            <div class="modal fade" id="correctModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Correct
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Incorrect Modal -->
+                            <div class="modal fade" id="incorrectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Incorrect
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -73,6 +127,4 @@
     <!-- Extensions JS -->
     <script src="js/extensions.js"></script>
 
-</body>
-
-</html>
+</body></html>
