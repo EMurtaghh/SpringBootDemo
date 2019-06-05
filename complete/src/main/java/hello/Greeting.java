@@ -8,6 +8,15 @@ public class Greeting {
     private String ghost;
     private String number;
     private String thot;
+    private String bog;
+
+    public String getBog() {
+        return bog;
+    }
+
+    public void setbog(String bog) {
+        this.bog = bog;
+    }
 
     public String getThot() {
         return thot;
