@@ -1,9 +1,10 @@
 package hello;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Questions {
-    public ArrayList<String> q;
+    public List<String> q;
 
     public Questions(){
         q = new ArrayList<String>();
