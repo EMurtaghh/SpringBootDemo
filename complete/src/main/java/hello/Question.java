@@ -12,10 +12,12 @@ import java.util.List;
 @Entity
 @Table(name = "question")
 public class Question {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "hibernateId")
+//    private int hibernateId;
+
+    private String id;
 
     @Column(name = "difficulty")
     private int diffiulty;
@@ -29,12 +31,16 @@ public class Question {
 
     public Question(){}
 
-    public Question(String questionTextIn, int diffiultyIn, String correctAnswerIn, List<String> answersIn){
+    public Question(String idIn, String questionTextIn, int diffiultyIn, String correctAnswerIn, List<String> answersIn){
+        this.id = idIn;
         this.questionText = questionTextIn;
         this.diffiulty = diffiultyIn;
         this.correctAnswer = correctAnswerIn;
         this.answers = answersIn;
     }
+
+    public String getId() {return id;}
+    public void setId(String idIn) {id = idIn;}
 
     public String getQuestionText() { return questionText; }
     public void setQuestionText(String textIn) {questionText = textIn;}
@@ -45,8 +51,8 @@ public class Question {
     public String getCorrectAnswer() {return correctAnswer;}
     public void setCorrectAnswer(String correctAnswerIn) {correctAnswer = correctAnswerIn;}
 
-    public List<String> getWrongAnswers() {return answers;}
-    public void setWrongAnswers(List<String> answersIn) {answers = answersIn;}
+    public List<String> getAnswers() {return answers;}
+    public void setAnswers(List<String> answersIn) {answers = answersIn;}
 
     @Override
     public String toString() {

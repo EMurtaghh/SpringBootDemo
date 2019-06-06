@@ -15,18 +15,18 @@ public class QuestionTest {
         q1A.add("Cindy");
         q1A.add("Joey");
         q1A.add("King Arthur");
-        Question q1 = new Question("What is your name?", 1, "King Arthur", q1A);
+        Question q1 = new Question("Test Q1", "What is your name?", 1, "King Arthur", q1A);
         List<String> q2A = new ArrayList<>();
         q2A.add("To Graduate");
         q2A.add("To make an ITS");
         q2A.add("To seek the Holy Grail");
-        Question q2 = new Question("What is your quest?", 3, "To seek the Holy Grail", q2A);
+        Question q2 = new Question("Test Q2", "What is your quest?", 3, "To seek the Holy Grail", q2A);
         List<String> q3A = new ArrayList<>();
         q3A.add("10 m/s");
         q3A.add("20 m/s");
         q3A.add("30 m/s");
         q3A.add("African or European?");
-        Question q3 = new Question("What is the airspeed velocity of an unladen swallow?", 10, "African or European?", q3A);
+        Question q3 = new Question("Test Q3","What is the airspeed velocity of an unladen swallow?", 10, "African or European?", q3A);
 
         List<Question> allQuestions = new ArrayList<>();
         allQuestions.add(q1);
@@ -39,18 +39,19 @@ public class QuestionTest {
             System.out.println(JsonUtil.toJsonString(q2));
             System.out.println(JsonUtil.toJsonString(q3));
 
-            JsonUtil.toJsonFile("QuestionToJSONFileTest1.txt", allQuestions);
+            JsonUtil.toJsonFile("src/test/resources/QuestionToJSONFileTest1.txt", allQuestions);
         }
         catch(Exception e){}
 
         //load from JSON file
         try{
-            List<Question> questionsFromFile = JsonUtil.listFromJsonFile("QuestionToJSONFileTest1.txt", Question.class);
+            List<Question> questionsFromFile = JsonUtil.listFromJsonFile("src/test/resources/QuestionToJSONFileTest1.txt", Question.class);
             for(Question currQuestion : questionsFromFile)
                 System.out.println(currQuestion.getQuestionText());
         }
-        catch(Exception ee){}
-
+        catch(Exception ee){
+            System.out.println("Can't load from JSON");
+        }
 
     }
 
