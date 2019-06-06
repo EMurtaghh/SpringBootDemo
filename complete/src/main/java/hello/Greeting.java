@@ -1,5 +1,7 @@
 package hello;
 
+import javax.swing.*;
+
 public class Greeting {
 
     private String id;
@@ -26,6 +28,19 @@ public class Greeting {
         } else {
             setCity("Incorrect City");
         }
+    }
+
+    public void displayResults(){
+        String messa="Your answer 1: " + id;
+        messa+="Answer 1: Ultrasonography uses high frequency sound waves which are transmitted from a transducer (probe) into the patient.";
+        messa+="Your answer 2: " +content;
+        messa+="Answer 2: Reproductive breeding exam (cycle check mares, pregnancy exams), Tendons/ligaments,ect";
+        messa+="Your answer 3: " + horse;
+        messa+="Your answer 4: " + ghost;
+        messa+="Your answer 5: " + number;
+        messa+="Your answer 6: " + thot;
+        messa+="Your answer 7: " + bog;
+        messa+="Your answer 8: " + city;
     }
 
     public String getBog() {
