@@ -3,12 +3,14 @@
 <head>
     <title>Horse</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
 </head>
 <body>
 <h1>Questions</h1>
 <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+    <script src="../static/js/Change.js"></script>
 
-    <img src="../static/images/horse.jpg" width="1000" th:src="@{images/horse.jpg}"/>
+    <b id="answer"><img src="../static/images/horse.jpg" width="1000" th:src="@{images/horse.jpg}"/></b>
 
     <p>What is Ultrasonography/Ultrasound? <input type="text" th:field="*{id}" /></p>
 
@@ -48,6 +50,10 @@
     <p>What is your favorite horse breed?</p>
     <br> <textarea th:field="*{bog}" rows="10" cols="30">
     </textarea>
+    
+    <button type="button" onclick="displayFeedback(generateFeedback())" >
+        Change
+    </button>
 
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>

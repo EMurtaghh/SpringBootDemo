@@ -10,20 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class GreetingController {
 
-    @GetMapping("/greeting")
+    @GetMapping("/questions")
     public String greetingForm(Model model) {
-        model.addAttribute("greeting", new Greeting());
-        return "greeting";
-    }
-    @RequestMapping("/next")
-    public String nextQuestion(@ModelAttribute Greeting greeting) {
-        return "greeting2";
+        model.addAttribute("horses", new WormBones());
+        return "horses";
     }
 
-    @PostMapping("/greeting")
-    public String greetingSubmit(@ModelAttribute Greeting greeting) {
-        greeting.checkCity();
-        return "result";
-    }
+//    @PostMapping("/greeting")
+//    public String greetingSubmit(@ModelAttribute Greeting greeting) {
+//        greeting.checkCity();
+//        return "result";
+//    }
 
 }

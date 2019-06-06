@@ -1,7 +1,5 @@
 package hello;
 
-import javax.swing.*;
-
 public class Greeting {
 
     private String id;
