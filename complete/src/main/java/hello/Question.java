@@ -20,7 +20,7 @@ public class Question {
     private String id;
 
     @Column(name = "difficulty")
-    private int diffiulty;
+    private int difficulty;
 
     @Column(name = "questionText")
     private String questionText;
@@ -31,10 +31,10 @@ public class Question {
 
     public Question(){}
 
-    public Question(String idIn, String questionTextIn, int diffiultyIn, String correctAnswerIn, List<String> answersIn){
+    public Question(String idIn, String questionTextIn, int difficultyIn, String correctAnswerIn, List<String> answersIn){
         this.id = idIn;
         this.questionText = questionTextIn;
-        this.diffiulty = diffiultyIn;
+        this.difficulty = difficultyIn;
         this.correctAnswer = correctAnswerIn;
         this.answers = answersIn;
     }
@@ -45,8 +45,8 @@ public class Question {
     public String getQuestionText() { return questionText; }
     public void setQuestionText(String textIn) {questionText = textIn;}
 
-    public int getDiffiulty() { return diffiulty; }
-    public void setDiffiulty(int difficultyIn) { diffiulty = difficultyIn;}
+    public int getDifficulty() { return difficulty; }
+    public void setDifficulty(int difficultyIn) { difficulty = difficultyIn;}
 
     public String getCorrectAnswer() {return correctAnswer;}
     public void setCorrectAnswer(String correctAnswerIn) {correctAnswer = correctAnswerIn;}
@@ -56,6 +56,6 @@ public class Question {
 
     @Override
     public String toString() {
-        return "Question [id=" + id + ", text=" + questionText + ", difficulty=" + diffiulty + "]";
+        return "Question [id=" + id + ", text=" + questionText + ", difficulty=" + difficulty + "]";
     }
 }

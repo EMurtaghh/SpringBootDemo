@@ -5,10 +5,12 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.*;
+
 public class QuestionTest {
+
     @Test
     public void loadQuestionsFromJSONTest()  {
-
         //create the Question objects from json
         List<String> q1A = new ArrayList<>();
         q1A.add("Bob");
@@ -35,10 +37,6 @@ public class QuestionTest {
 
         //Write to JSON file
         try{
-            System.out.println(JsonUtil.toJsonString(q1));
-            System.out.println(JsonUtil.toJsonString(q2));
-            System.out.println(JsonUtil.toJsonString(q3));
-
             JsonUtil.toJsonFile("src/test/resources/QuestionToJSONFileTest1.txt", allQuestions);
         }
         catch(Exception e){}
@@ -46,11 +44,13 @@ public class QuestionTest {
         //load from JSON file
         try{
             List<Question> questionsFromFile = JsonUtil.listFromJsonFile("src/test/resources/QuestionToJSONFileTest1.txt", Question.class);
-            for(Question currQuestion : questionsFromFile)
-                System.out.println(currQuestion.getQuestionText());
+            assertEquals(q1.getQuestionText(), questionsFromFile.get(0).getQuestionText());
+            assertEquals(q2.getQuestionText(), questionsFromFile.get(1).getQuestionText());
+            assertEquals(q3.getQuestionText(), questionsFromFile.get(2).getQuestionText());
         }
         catch(Exception ee){
-            System.out.println("Can't load from JSON");
+            //loading from JSON failed
+            assertTrue(false);
         }
 
     }
