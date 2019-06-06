@@ -17,7 +17,7 @@
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
     <!-- My Project CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
 
 </head>
 
@@ -59,10 +59,10 @@
                     <div class="row">
                         <div class="col-12 text-center">
 
-                            <script src="/resources/static/js/validateForm.js"></script>
+                            <script src="../static/js/AnswerCheckControl.js"></script>
 
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal" onclick="validateForm()" data-target="#modal">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" onclick="displayFeedback(generateFeedback(exampleRadios4.checked))" data-target="#modal">
                                 Submit
                             </button>
                             <!-- Correct Modal -->
@@ -77,7 +77,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <b id="answer">Correct</b>
+                                            <b id="answer">zip zorp! something borked :/</b>
 
                                         </div>
                                         <div class="modal-footer">
