@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Horse</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+<h1>Questions</h1>
+<form action="#" th:action="@{/questions}" th:object="${horses}" method="post">
+    <script src="../static/js/Change.js"></script>
+
+    <b id="image"><img src="../static/images/horse.jpg" width="1000" th:src="@{images/horse.jpg}"/></b>
+
+    <b id="plane">
+    <p>What plane is this?</p>
+    <input type="radio" th:field="*{plane}" value="'Lat' Incorrect"> Longitude<br>
+    <input type="radio" th:field="*{plane}" value="'Long' Correct"> Latitude<br>
+    <input type="radio" th:field="*{plane}" value="'I don't know"> I don't know<br>
+    </b>
+
+    <b id="structure">
+    <p>What structure is in the near field?</p>
+    <input th:field="*{structure}" list="structures" />
+    <datalist id="structures">
+        <option value="Bone" />
+        <option value="Tendon" />
+        <option value="Muscle" />
+        <option value="Blood vessel" />
+        <option value="I don't know" />
+    </datalist>
+    </b>
+    
+    <b id="proximal">
+    <p>Whatis the structure's proximal attatchemnt?</p>
+    <input th:field="*{proximal}" list="structures2" />
+    <datalist id="structures2">
+        <option value="Bone" />
+        <option value="Tendon" />
+        <option value="Muscle" />
+        <option value="Blood vessel" />
+        <option value="I don't know" />
+    </datalist>
+    </b>
+    
+    <b id="distal">
+    <p>Whatis the structure's distal attatchemnt?</p>
+    <input th:field="*{distal}" list="structures3" />
+    <datalist id="structures3">
+        <option value="Bone" />
+        <option value="Tendon" />
+        <option value="Muscle" />
+        <option value="Blood vessel" />
+        <option value="I don't know" />
+    </datalist>
+    </b>
+    
+    <b id="zone">
+    <p>What zone is this?</p>
+    <input type="radio" th:field="*{zone}" value="'1A' Incorrect"> 1A<br>
+    <input type="radio" th:field="*{zone}" value="'1B' Correct"> 1B<br>
+    <input type="radio" th:field="*{zone}" value="'2A' Incorrect"> 2A<br>
+    <input type="radio" th:field="*{zone}" value="'2B' Incorrect"> 2B<br>
+    <input type="radio" th:field="*{zone}" value="'3A' Incorrect"> 3A<br>
+    <input type="radio" th:field="*{zone}" value="'3B' Incorrect"> 3B<br>
+    <input type="radio" th:field="*{zone}" value="'3C' Incorrect"> 3C<br>
+    <input type="radio" th:field="*{zone}" value="'I don't know"> I don't know<br>
+    </b>
+    
+    <button type="button" onclick="displayFeedback()" >
+        Change
+    </button>
+
+</form>
+</body>
+</html>
