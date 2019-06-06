@@ -25,15 +25,15 @@ public class Question {
 
     private String correctAnswer;
 
-    private List<String> wrongAnswers;
+    private List<String> answers;
 
     public Question(){}
 
-    public Question(String questionTextIn, int diffiultyIn, String correctAnswerIn, List<String> wrongAnswersIn){
+    public Question(String questionTextIn, int diffiultyIn, String correctAnswerIn, List<String> answersIn){
         this.questionText = questionTextIn;
         this.diffiulty = diffiultyIn;
         this.correctAnswer = correctAnswerIn;
-        this.wrongAnswers = wrongAnswersIn;
+        this.answers = answersIn;
     }
 
     public String getQuestionText() { return questionText; }
@@ -45,8 +45,8 @@ public class Question {
     public String getCorrectAnswer() {return correctAnswer;}
     public void setCorrectAnswer(String correctAnswerIn) {correctAnswer = correctAnswerIn;}
 
-    public List<String> getWrongAnswers() {return wrongAnswers;}
-    public void setWrongAnswers(List<String> wrongAnswersIn) {wrongAnswers = wrongAnswersIn;}
+    public List<String> getWrongAnswers() {return answers;}
+    public void setWrongAnswers(List<String> answersIn) {answers = answersIn;}
 
     @Override
     public String toString() {
