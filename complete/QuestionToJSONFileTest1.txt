@@ -1,0 +1,16 @@
+[ {
+  "diffiulty" : 1,
+  "questionText" : "What is your name?",
+  "correctAnswer" : "King Arthur",
+  "wrongAnswers" : [ "Bob", "Cindy", "Joey", "King Arthur" ]
+}, {
+  "diffiulty" : 3,
+  "questionText" : "What is your quest?",
+  "correctAnswer" : "To seek the Holy Grail",
+  "wrongAnswers" : [ "To Graduate", "To make an ITS", "To seek the Holy Grail" ]
+}, {
+  "diffiulty" : 10,
+  "questionText" : "What is the airspeed velocity of an unladen swallow?",
+  "correctAnswer" : "African or European?",
+  "wrongAnswers" : [ "10 m/s", "20 m/s", "30 m/s", "African or European?" ]
+} ]
