@@ -3,11 +3,11 @@ package hello;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Questions {
+public class QuestionSet {
     public List<String> q;
     public List<Boolean> seen;
 
-    public Questions(){
+    public QuestionSet(){
         q = new ArrayList<String>();
         q.add("What is your favorite color?");
         q.add("When is your birthday?");

@@ -4,16 +4,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import java.util.Random;
 
 @RestController
 public class HelloController {
-    private Questions que;
+    private QuestionSet que;
 
     private HelloController(){
-        que = new Questions();
+        que = new QuestionSet();
     }
 
     @RequestMapping("/")
