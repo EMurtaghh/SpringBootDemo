@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Questions {
     public List<String> q;
+    public List<Boolean> seen;
 
     public Questions(){
         q = new ArrayList<String>();
@@ -13,6 +14,12 @@ public class Questions {
         q.add("What is your eye color?");
         q.add("What is your credit card number?");
         q.add("What is your social security number?");
+
+        seen = new ArrayList<Boolean>();
+        for(int i=0; i<=5; i++){
+            seen.add(false);
+        }
+
     }
 
     /**
@@ -23,12 +30,15 @@ public class Questions {
      *
      */
     public String getQ(int num){
+        seen.set(num, true);
         return q.get(num);
     }
 
     public int getLen(){
         return q.size();
     }
+
+
 
 
 }

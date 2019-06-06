@@ -23,12 +23,27 @@ public class HelloController {
 
     @RequestMapping("/qr")
     public String questionPickRandom() {
-        Questions quest = new Questions();
         Random rand = new Random();
         int index = rand.nextInt(que.getLen());
         String theQ = que.getQ(index);
         return theQ;
     }
+
+
+    //if statement version
+    @RequestMapping("/q")
+    public String questionPick(@RequestParam int index) {
+        if(index<que.getLen()){
+            String picked = que.getQ(index);
+            return picked;
+        }
+        else {
+            String picked = que.getQ(que.getLen() - 1);
+            return picked;
+        }
+    }
+}
+
 
     //try catch version
 //    @RequestMapping("/q")
@@ -42,19 +57,3 @@ public class HelloController {
 //        }
 //
 //    }
-
-
-    //if statement version
-    @RequestMapping("/q")
-    public String questionPick(@RequestParam int index) {
-        //Questions que = new Questions();
-        if(index<que.getLen()){
-            String picked = que.getQ(index);
-            return picked;
-        }
-        else {
-            String picked = que.getQ(que.getLen() - 1);
-            return picked;
-        }
-    }
-}
