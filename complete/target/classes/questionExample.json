@@ -1,0 +1,26 @@
+{
+  "All Questions": [{
+      "text" : "What is your name?",
+      "correctAnswer" : "King Arthur",
+      "wrongAnswers" : [
+        "Bob",
+        "Joe",
+        "Cindy"
+      ]
+    }, {
+      "text" : "What is your quest?",
+      "correctAnswer": "To seek the Holy Grail ",
+      "wrongAnswers": [
+        "To make an ITS",
+        "To graduate"
+      ]
+    } , {
+    "text" : "What is the airspeed velocity of an unladen swallow?",
+    "correctAnswer": "African or European?",
+    "wrongAnswers" : [
+      "10 m/s",
+      "20 m/s",
+      "30 m/s"
+    ]
+  } ]
+}
