@@ -12,6 +12,7 @@ public class QuestionSetTest {
         QuestionSet que = new QuestionSet();
         int len = que.getLen();
         assertEquals(5, len);
+
     }
 
     @Test
