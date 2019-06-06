@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "question")
@@ -22,18 +23,30 @@ public class Question {
     @Column(name = "questionText")
     private String questionText;
 
-    public Question(){} //hibernate recommends having a default constructor
+    private String correctAnswer;
 
-    public Question(String questionTextIn, int diffiultyIn){
+    private List<String> wrongAnswers;
+
+    public Question(){}
+
+    public Question(String questionTextIn, int diffiultyIn, String correctAnswerIn, List<String> wrongAnswersIn){
         this.questionText = questionTextIn;
         this.diffiulty = diffiultyIn;
+        this.correctAnswer = correctAnswerIn;
+        this.wrongAnswers = wrongAnswersIn;
     }
 
-    public int getId(){ return id; }
-
     public String getQuestionText() { return questionText; }
+    public void setQuestionText(String textIn) {questionText = textIn;}
 
     public int getDiffiulty() { return diffiulty; }
+    public void setDiffiulty(int difficultyIn) { diffiulty = difficultyIn;}
+
+    public String getCorrectAnswer() {return correctAnswer;}
+    public void setCorrectAnswer(String correctAnswerIn) {correctAnswer = correctAnswerIn;}
+
+    public List<String> getWrongAnswers() {return wrongAnswers;}
+    public void setWrongAnswers(List<String> wrongAnswersIn) {wrongAnswers = wrongAnswersIn;}
 
     @Override
     public String toString() {

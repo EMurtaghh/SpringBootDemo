@@ -1,5 +1,6 @@
 package hello;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,9 +22,14 @@ public class Application {
         SpringApplication.run(Application.class, args);
 
         //Make questions
-        Question q1 = new Question("What is your name?", 1);
-        Question q2 = new Question("What is your quest?", 3);
-        Question q3 = new Question("What is the airspeed velocity of an unladen swallow?", 10);
+        List<String> wrongAnswers = new ArrayList<>();
+        wrongAnswers.add("ZXC");
+        wrongAnswers.add("XCV");
+        wrongAnswers.add("CVB");
+
+        Question q1 = new Question("What is your name?", 1, "ASD", wrongAnswers);
+        Question q2 = new Question("What is your quest?", 3, "ASD", wrongAnswers);
+        Question q3 = new Question("What is the airspeed velocity of an unladen swallow?", 10, "ASD", wrongAnswers);
 
         //Save questions with hibernate
         Transaction transaction = null;
@@ -68,5 +74,4 @@ public class Application {
 
         };
     }
-
 }
