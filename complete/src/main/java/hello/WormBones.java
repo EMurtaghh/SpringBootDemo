@@ -1,6 +1,9 @@
 package hello;
 
+import javax.validation.constraints.*;
+
 public class WormBones {
+
     private String plane;
     private String structure;
     private String proximal;
@@ -37,4 +40,6 @@ public class WormBones {
     public void setZone(String zone) {
         this.zone = zone;
     }
+
+
 }

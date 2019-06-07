@@ -14,14 +14,15 @@
 
     <b id="plane">
     <p>What plane is this?</p>
-    <input type="radio" th:field="*{plane}" value="'Lat' Incorrect"> Longitude<br>
-    <input type="radio" th:field="*{plane}" value="'Long' Correct"> Latitude<br>
-    <input type="radio" th:field="*{plane}" value="'I don't know"> I don't know<br>
+    <input type="radio" name="plane" value="Incorrect"> Longitude<br>
+    <input type="radio" name="plane" value="Correct"> Latitude<br>
+    <input type="radio" name="plane" value="'I don't know"> I don't know<br>
     </b>
+    <b id="planeCorrect"> </b>
 
     <b id="structure">
     <p>What structure is in the near field?</p>
-    <input th:field="*{structure}" list="structures" />
+    <input name="structures" list="structures"/>
     <datalist id="structures">
         <option value="Bone" />
         <option value="Tendon" />
@@ -30,10 +31,11 @@
         <option value="I don't know" />
     </datalist>
     </b>
+    <b id="structureCorrect"> </b>
     
     <b id="proximal">
     <p>Whatis the structure's proximal attatchemnt?</p>
-    <input th:field="*{proximal}" list="structures2" />
+    <input name="proximal" list="structures2" />
     <datalist id="structures2">
         <option value="Bone" />
         <option value="Tendon" />
@@ -42,10 +44,11 @@
         <option value="I don't know" />
     </datalist>
     </b>
+    <b id="proximalCorrect"> </b>
     
     <b id="distal">
     <p>Whatis the structure's distal attatchemnt?</p>
-    <input th:field="*{distal}" list="structures3" />
+    <input name="distal" list="structures3" />
     <datalist id="structures3">
         <option value="Bone" />
         <option value="Tendon" />
@@ -54,21 +57,32 @@
         <option value="I don't know" />
     </datalist>
     </b>
+    <b id="distalCorrect"> </b>
     
     <b id="zone">
     <p>What zone is this?</p>
-    <input type="radio" th:field="*{zone}" value="'1A' Incorrect"> 1A<br>
-    <input type="radio" th:field="*{zone}" value="'1B' Correct"> 1B<br>
-    <input type="radio" th:field="*{zone}" value="'2A' Incorrect"> 2A<br>
-    <input type="radio" th:field="*{zone}" value="'2B' Incorrect"> 2B<br>
-    <input type="radio" th:field="*{zone}" value="'3A' Incorrect"> 3A<br>
-    <input type="radio" th:field="*{zone}" value="'3B' Incorrect"> 3B<br>
-    <input type="radio" th:field="*{zone}" value="'3C' Incorrect"> 3C<br>
-    <input type="radio" th:field="*{zone}" value="'I don't know"> I don't know<br>
+    <input type="radio" name="zone" value="Incorrect"> 1A<br>
+    <input type="radio" name="zone" value="Correct"> 1B<br>
+    <input type="radio" name="zone" value="Incorrect"> 2A<br>
+    <input type="radio" name="zone" value="Incorrect"> 2B<br>
+    <input type="radio" name="zone" value="Incorrect"> 3A<br>
+    <input type="radio" name="zone" value="Incorrect"> 3B<br>
+    <input type="radio" name="zone" value="Incorrect"> 3C<br>
+    <input type="radio" name="zone" value="'I don't know"> I don't know<br>
     </b>
-    
+
+    <b id="zoneCorrect"> </b>
+
+    <br>  </b>
+
+    <b id="submitButton">
+    <button type="button" onclick="checkAnswers(form)" >
+        Submit
+    </button>
+    </b>
+
     <button type="button" onclick="displayFeedback()" >
-        Change
+        Next Question set
     </button>
 
 </form>
