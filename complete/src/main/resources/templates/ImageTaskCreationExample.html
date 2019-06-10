@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Test Launch</title>
+    <title>Image Task Example</title>
     <meta charset="utf-8">
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -23,7 +23,147 @@
 
 <body id="topSection">
     <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!--Header-->
+    <header>
+        <img class="imgCenter" src="https://cdn.discordapp.com/attachments/185166414091386880/557225531519795201/l_o_n_g_commonwealth_banner.png">
+    </header>
+    <hr>
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <img class="imgCenter" height="100%" width="20%" src="https://cdn.discordapp.com/attachments/557676293508825098/587626545217011712/province_map_unhighlighted.png">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-10">
+                <b>Question 1. What is one Province in the map above?</b>
+                <form name="questionOne">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio1q1" value="incorrect">
+                        <label class="form-check-label" for="option1radio">
+                            Avalant
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio2q1" value="incorrect">
+                        <label class="form-check-label" for="option2radio">
+                            Araku
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio3q1" value="correct">
+                        <label class="form-check-label" for="option3radio">
+                            Etes
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio4q1" value="incorrect">
+                        <label class="form-check-label" for="option4radio">
+                            Epalu
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-10">
+                <b>Question 2. What is the Capital of Osios Province?</b>
+                <form name="questionTwo">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio1q2" value="correct">
+                        <label class="form-check-label" for="option1radio">
+                            Araku
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio2q2" value="incorrect">
+                        <label class="form-check-label" for="option2radio">
+                            Rajak
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio3q2" value="incorrect">
+                        <label class="form-check-label" for="option3radio">
+                            Caprica
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio4q2" value="incorrect">
+                        <label class="form-check-label" for="option4radio">
+                            Ashon
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-10">
+                <b>Question 3. What neighboring Country borders Gallifrax along the South-West?</b>
+                <form name="questionThree">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio1q3" value="incorrect">
+                        <label class="form-check-label" for="option1radio">
+                            Vihreamaa
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio2q3" value="incorrect">
+                        <label class="form-check-label" for="option2radio">
+                            West Bengalis
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio3q3" value="correct">
+                        <label class="form-check-label" for="option3radio">
+                            Fleur de la Mar
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio4q3" value="incorrect">
+                        <label class="form-check-label" for="option4radio">
+                            Ratateague
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
 
+                <script src="../static/js/AnswerCheckControl.js"></script>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" onclick="displayFeedback(generateFeedbackMulti(radio3q1.checked,radio1q2.checked,radio3q3.checked))" data-target="#modal">
+                    Submit
+                </button>
+                <!-- Correct Modal -->
+                <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Were you Correct??</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <b id="answer">zip zorp! something borked :/</b>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -36,6 +176,4 @@
     <!-- Extensions JS -->
     <script src="js/extensions.js"></script>
 
-</body>
-
-</html>
+</body></html>
