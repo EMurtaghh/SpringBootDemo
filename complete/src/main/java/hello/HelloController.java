@@ -8,10 +8,10 @@ import java.util.Random;
 
 @RestController
 public class HelloController {
-    private QuestionSet que;
+    private UserQuestionSet que;
 
     private HelloController(){
-        que = new QuestionSet();
+        que = new UserQuestionSet("4");
     }
 
     @RequestMapping("/")
@@ -20,25 +20,20 @@ public class HelloController {
     }
 
     @RequestMapping("/qr")
-    public String questionPickRandom() {
+    public Question questionPickRandom() {
         Random rand = new Random();
-        int index = rand.nextInt(que.getLen());
-        String theQ = que.getQ(index);
+        int id = rand.nextInt(que.getLen());
+        Question theQ = que.getQ(Integer.toString(id));
         return theQ;
     }
 
 
     //if statement version
     @RequestMapping("/q")
-    public String questionPick(@RequestParam int index) {
-        if(index<que.getLen()){
-            String picked = que.getQ(index);
-            return picked;
-        }
-        else {
-            String picked = que.getQ(que.getLen() - 1);
-            return picked;
-        }
+    public Question questionPick(@RequestParam String id) {
+        Question picked = que.getQ(id);
+        return picked;
+
     }
 }
 

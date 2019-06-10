@@ -9,7 +9,7 @@ public class QuestionSetTest {
 
     @Test
     public void getLenTest(){
-        QuestionSet que = new QuestionSet();
+        UserQuestionSet que = new UserQuestionSet("99");
         int len = que.getLen();
         assertEquals(5, len);
 
@@ -17,14 +17,14 @@ public class QuestionSetTest {
 
     @Test
     public void getQTest(){
-        QuestionSet que = new QuestionSet();
-        String q = que.getQ(0);
-        assertEquals("What is your favorite color?", q);
+        UserQuestionSet que = new UserQuestionSet("100");
+        Question q = que.getQ("2");
+        assertEquals("What is your favorite color?", q.getQuestionText());
     }
 
 //    @Test
 //    public void addQTest(){
-//        QuestionSet que = new QuestionSet();
+//        UserQuestionSet que = new UserQuestionSet();
 //
 //    }
 }
