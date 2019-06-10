@@ -16,7 +16,7 @@
     <p>What plane is this?</p>
     <input type="radio" name="plane" value="Incorrect"> Longitude<br>
     <input type="radio" name="plane" value="Correct"> Latitude<br>
-    <input type="radio" name="plane" value="'I don't know"> I don't know<br>
+    <input type="radio" name="plane" value="Unsure"> I don't know<br>
     </b>
     <b id="planeCorrect"> </b>
 
@@ -28,7 +28,7 @@
         <option value="Tendon" />
         <option value="Muscle" />
         <option value="Blood vessel" />
-        <option value="I don't know" />
+        <option value="Unsure" />
     </datalist>
     </b>
     <b id="structureCorrect"> </b>
@@ -41,7 +41,7 @@
         <option value="Tendon" />
         <option value="Muscle" />
         <option value="Blood vessel" />
-        <option value="I don't know" />
+        <option value="Unsure" />
     </datalist>
     </b>
     <b id="proximalCorrect"> </b>
@@ -54,7 +54,7 @@
         <option value="Tendon" />
         <option value="Muscle" />
         <option value="Blood vessel" />
-        <option value="I don't know" />
+        <option value="Unsure" />
     </datalist>
     </b>
     <b id="distalCorrect"> </b>
@@ -68,7 +68,7 @@
     <input type="radio" name="zone" value="Incorrect"> 3A<br>
     <input type="radio" name="zone" value="Incorrect"> 3B<br>
     <input type="radio" name="zone" value="Incorrect"> 3C<br>
-    <input type="radio" name="zone" value="'I don't know"> I don't know<br>
+    <input type="radio" name="zone" value="Unsure"> I don't know<br>
     </b>
 
     <b id="zoneCorrect"> </b>
@@ -81,7 +81,7 @@
     </button>
     </b>
 
-    <button type="button" onclick="displayFeedback()" >
+    <button type="button" onclick="changeQuestions()" >
         Next Question set
     </button>
 
