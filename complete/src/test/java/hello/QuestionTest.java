@@ -50,7 +50,7 @@ public class QuestionTest {
         }
         catch(Exception ee){
             //loading from JSON failed
-            assertTrue(false);
+            fail();
         }
 
     }
