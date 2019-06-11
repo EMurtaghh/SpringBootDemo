@@ -8,25 +8,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Controller
 public class GreetingController implements WebMvcConfigurer {
 
-//    @Override
-//    public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addViewController("/results").setViewName("results");
-//    }
-
-    @GetMapping("/oof")
-    public String greetingForm(Model model) {
-        model.addAttribute("horses", new WormBones());
+    @GetMapping("/test6")
+    public String greetingForm() {
         return "horses";
     }
-
-//    @PostMapping("/other")
-//    public String checkPersonInfo(@Valid WormBones horses, BindingResult bindingResult) {
-//        horses.checkValues();
-//        if (bindingResult.hasErrors()) {
-//            return "horses";
-//        }
-//
-//        return "redirect:/results";
-//    }
 
 }

@@ -33,7 +33,7 @@ function createFillIn(){
 }
 
 function changeQuestions() {
-
+    document.getElementById('image').innerHTML = '<img src="../static/images/leg.jpg" width="1000" th:src="@{images/leg.jpg}"/>';
 
     document.getElementById('plane').innerHTML = createMulti();
     document.getElementById('structure').innerHTML = createFillIn();
