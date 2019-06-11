@@ -28,9 +28,9 @@ public class Application {
         wrongAnswers.add("XCV");
         wrongAnswers.add("CVB");
 
-        Question q1 = new Question("App Q1","What is your name?", 1, "ASD", wrongAnswers);
-        Question q2 = new Question("App Q2","What is your quest?", 3, "ASD", wrongAnswers);
-        Question q3 = new Question("App Q3","What is the airspeed velocity of an unladen swallow?", 10, "ASD", wrongAnswers);
+        Question q1 = new Question("App Q1","What is your name?", "PLANE", "ASD", wrongAnswers);
+        Question q2 = new Question("App Q2","What is your quest?", "STRUCTURE", "ASD", wrongAnswers);
+        Question q3 = new Question("App Q3","What is the airspeed velocity of an unladen swallow?", "ATTACHMENT", "ASD", wrongAnswers);
 
         //Save questions with hibernate
 //        Transaction transaction = null;

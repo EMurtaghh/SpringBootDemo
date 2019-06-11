@@ -12,15 +12,16 @@ import java.util.List;
 @Entity
 @Table(name = "question")
 public class Question {
+
+    enum Type{
+        PLANE, STRUCTURE, ATTACHMENT, ZONE
+    }
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @Column(name = "hibernateId")
 //    private int hibernateId;
 
     private String id;
-
-    @Column(name = "difficulty")
-    private int difficulty;
 
     @Column(name = "questionText")
     private String questionText;
@@ -29,14 +30,16 @@ public class Question {
 
     private List<String> answers;
 
+    private Type type;
+
     public Question(){}
 
-    public Question(String idIn, String questionTextIn, int difficultyIn, String correctAnswerIn, List<String> answersIn){
+    public Question(String idIn, String questionTextIn, String typeIn, String correctAnswerIn, List<String> answersIn){
         this.id = idIn;
         this.questionText = questionTextIn;
-        this.difficulty = difficultyIn;
         this.correctAnswer = correctAnswerIn;
         this.answers = answersIn;
+        setType(typeIn);
     }
 
     public String getId() {return id;}
@@ -45,8 +48,24 @@ public class Question {
     public String getQuestionText() { return questionText; }
     public void setQuestionText(String textIn) {questionText = textIn;}
 
-    public int getDifficulty() { return difficulty; }
-    public void setDifficulty(int difficultyIn) { difficulty = difficultyIn;}
+    public String getType() { return type.toString(); }
+    public void setType(String typeIn) {
+        if(typeIn.equals("PLANE")){
+            this.type = Type.PLANE;
+        }
+        else if(typeIn.equals("STRUCTURE")){
+            this.type = Type.STRUCTURE;
+        }
+        else if(typeIn.equals("ATTACHMENT")){
+            this.type = Type.ATTACHMENT;
+        }
+        else if(typeIn.equals("ZONE")){
+            this.type = Type.ZONE;
+        }
+        else{
+            throw new IllegalArgumentException("Invalid type");
+        }
+    }
 
     public String getCorrectAnswer() {return correctAnswer;}
     public void setCorrectAnswer(String correctAnswerIn) {correctAnswer = correctAnswerIn;}
@@ -56,6 +75,6 @@ public class Question {
 
     @Override
     public String toString() {
-        return "Question [id=" + id + ", text=" + questionText + ", difficulty=" + difficulty + "]";
+        return "Question [id=" + id + ", text=" + questionText + ", type=" + type.toString() + "]";
     }
 }

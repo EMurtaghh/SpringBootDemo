@@ -21,7 +21,7 @@ public class UserQuestionSet {
         eyeA.add("blue");
         eyeA.add("green");
         eyeA.add("brown");
-        Question q1 = new Question("1", "What is your eye color?", 1, "purple", eyeA);
+        Question q1 = new Question("1", "What is your eye color?","PLANE", "purple", eyeA);
         allQuestions.add(q1);
         timesSeen.add(0);
         timesCorrect.add(0);
@@ -31,7 +31,7 @@ public class UserQuestionSet {
         colorA.add("blue");
         colorA.add("green");
         colorA.add("brown");
-        Question q2 = new Question("2", "What is your favorite color?", 2, "brown", colorA);
+        Question q2 = new Question("2", "What is your favorite color?", "STRUCTURE", "brown", colorA);
         allQuestions.add(q2);
         timesSeen.add(0);
         timesCorrect.add(0);
@@ -41,7 +41,7 @@ public class UserQuestionSet {
         skyA.add("blue");
         skyA.add("green");
         skyA.add("brown");
-        Question q3 = new Question("3", "What color is the sky?", 3, "blue", skyA);
+        Question q3 = new Question("3", "What color is the sky?", "ATTACHMENT", "blue", skyA);
         allQuestions.add(q3);
         timesSeen.add(0);
         timesCorrect.add(0);
@@ -51,7 +51,7 @@ public class UserQuestionSet {
         grassA.add("blue");
         grassA.add("green");
         grassA.add("brown");
-        Question q4 = new Question("4", "What color is the grass?", 1, "green", grassA);
+        Question q4 = new Question("4", "What color is the grass?", "ZONE", "green", grassA);
         allQuestions.add(q4);
         timesSeen.add(0);
         timesCorrect.add(0);
@@ -61,7 +61,7 @@ public class UserQuestionSet {
         ounceA.add("8");
         ounceA.add("16");
         ounceA.add("12");
-        Question q5 = new Question("5", "How many ounces are in a pound?", 3, "16", ounceA);
+        Question q5 = new Question("5", "How many ounces are in a pound?", "ATTACHMENT", "16", ounceA);
         allQuestions.add(q5);
         timesSeen.add(0);
         timesCorrect.add(0);
