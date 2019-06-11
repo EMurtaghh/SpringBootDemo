@@ -14,5 +14,5 @@ describe("AnswerCheckControl", function () {
         expect(generateFeedbackPerQuestion(true, false, false)).toBe("Questions 2 and 3 are wrong");
         expect(generateFeedbackPerQuestion(false, true, false)).toBe("Questions 1 and 3 are wrong");
         expect(generateFeedbackPerQuestion(false, false, true)).toBe("Questions 1 and 2 are wrong");
-    })
+    });
 });

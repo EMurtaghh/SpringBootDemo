@@ -6,6 +6,47 @@ function generateFeedback(isChecked) {
     }
 }
 
+function generateFeedbackQ1(isChecked) {
+    if (isChecked) {
+        return " Correct";
+    } else {
+        return " Incorrect";
+    }
+}
+
+function generateFeedbackQ2(isChecked) {
+    if (isChecked) {
+        return " Correct";
+    } else {
+        return " Incorrect";
+    }
+}
+
+function generateFeedbackQ3(isChecked) {
+
+    if (isChecked) {
+        return " Correct";
+    } else {
+        return " Incorrect";
+    }
+}
+
+function alternateFeedbackGenerator(isCheckedQ1, isCheckedQ2, isCheckedQ3) {
+
+    var displayStringQ1 = generateFeedbackQ1(isCheckedQ1);
+    var displayStringQ2 = generateFeedbackQ2(isCheckedQ2);
+    var displayStringQ3 = generateFeedbackQ3(isCheckedQ3);
+
+    var right = ' Correct';
+    var wrong = ' Incorrect';
+
+    document.getElementById("statusOne").innerHTML = displayStringQ1;
+    document.getElementById("statusTwo").innerHTML = displayStringQ2;
+    document.getElementById("statusThree").innerHTML = displayStringQ3;
+
+
+}
+
 function generateFeedbackMulti(isCheckedQ1, isCheckedQ2, isCheckedQ3) {
     var count = 0;
     if (isCheckedQ1) {
@@ -54,15 +95,15 @@ function generateFeedbackPerQuestion(isCheckedQ1, isCheckedQ2, isCheckedQ3) {
 
 }
 
+
 function displayFeedback(displayString) {
     document.getElementById('answer').innerHTML = displayString;
-    displayToggableButton();
+    displayToggableButton(displayString);
 }
 
-function displayToggableButton() {
-    var toggableStateButtonDeterminer = document.getElementById("answer").innerHTML;
+function displayToggableButton(displayString) {
     var toggableStateButton = document.getElementById("toggableButton");
-    if (toggableStateButtonDeterminer == "All three correct!") {
+    if (displayString == "All three correct!") {
         toggableStateButton.style.display = 'block';
     } else {
         toggableStateButton.style.display = 'none';
