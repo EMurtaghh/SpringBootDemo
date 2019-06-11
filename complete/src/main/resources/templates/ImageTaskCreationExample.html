@@ -141,7 +141,7 @@
                 <script src="../static/js/AnswerCheckControl.js"></script>
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" onclick="displayFeedback(generateFeedbackMulti(radio3q1.checked,radio1q2.checked,radio3q3.checked))" data-target="#modal">
+                <button type="button" class="btn btn-primary" data-toggle="modal" onclick="displayFeedback(generateFeedbackPerQuestion(radio3q1.checked,radio1q2.checked,radio3q3.checked))" data-target="#modal">
                     Submit
                 </button>
 
@@ -161,7 +161,7 @@
 
                             </div>
                             <div class="modal-footer">
-                                <a type="button" class="fas fa-arrow-circle-right btn btn-primary" href="ImageTaskCreationPage2Example.html"></a>
+                                <a type="button" class="fas fa-arrow-circle-right btn btn-primary" id="toggableButton" href="ImageTaskCreationPage2Example.html"></a>
                             </div>
                         </div>
                     </div>
