@@ -7,10 +7,13 @@
 </head>
 <body>
 <h1>Questions</h1>
-<form action="#" th:action="@{/questions}" th:object="${horses}" method="post">
-    <script src="../static/js/Change.js"></script>
+<form action="#" th:action="@{/new}" th:object="${horses}" method="post">
 
-    <b id="image"><img src="../static/images/horse.jpg" width="1000" th:src="@{images/horse.jpg}"/></b>
+    <script type="text/javascript" src="/js/change.js" ></script>
+
+    <b id="image">
+        <img src="../static/images/horse.jpg" width="1000" th:src="@{images/horse.jpg}"/>
+    </b>
 
     <b id="plane">
     <p>What plane is this?</p>

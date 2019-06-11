@@ -1,6 +1,3 @@
-function changeImage() {
-    return '<b id="image"><img src="../static/images/leg.jpg" width="1000" th:src="@{images/leg.jpg}"/></b>';
-}
 
 function remove(){
     return " ";
@@ -30,15 +27,16 @@ function createFillIn(){
         "answers" : [ "2", "4", "5", "6" ]
     };
 
-    return "<p>"+json.questionText+'</p> <input name="distal" list="structures3"/> <datalist id="structures3"> <option value="'
+    return "<p>"+json.questionText+'</p> <input name="structures" list="structures"/> <datalist id="structures"> <option value="'
         + json.answers[0]+ '"/> <option value="' + json.answers[1] + '"/> <option value="' + json.answers[2]
         + '"/> <option value="' + json.answers[3] + '"/> </datalist>';
 }
 
 function changeQuestions() {
-    document.getElementById('image').innerHTML = changeImage();
+
+
     document.getElementById('plane').innerHTML = createMulti();
-    document.getElementById('structure').innerHTML = remove();
+    document.getElementById('structure').innerHTML = createFillIn();
     document.getElementById('proximal').innerHTML = remove();
     document.getElementById('distal').innerHTML = remove();
     document.getElementById('zone').innerHTML = remove();
