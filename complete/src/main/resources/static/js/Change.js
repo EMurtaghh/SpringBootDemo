@@ -32,8 +32,19 @@ function createFillIn(){
         + '"/> <option value="' + json.answers[3] + '"/> </datalist>';
 }
 
+function change() {
+    var x = document.getElementById("image2");
+
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
 function changeQuestions() {
-    document.getElementById('image').innerHTML = '<img src="../static/images/leg.jpg" width="1000" th:src="@{images/leg.jpg}"/>';
+    document.getElementById('image').innerHTML = remove();
+    change();
 
     document.getElementById('plane').innerHTML = createMulti();
     document.getElementById('structure').innerHTML = createFillIn();

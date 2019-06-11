@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Controller
 public class GreetingController implements WebMvcConfigurer {
 
-    @GetMapping("/test6")
+    @GetMapping("/test7")
     public String greetingForm() {
         return "horses";
     }
