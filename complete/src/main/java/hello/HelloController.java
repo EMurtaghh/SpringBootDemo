@@ -22,7 +22,7 @@ public class HelloController {
     @RequestMapping("/qr")
     public Question questionPickRandom() {
         Random rand = new Random();
-        int id = rand.nextInt(que.getLen());
+        int id = rand.nextInt(que.getLenOfSeenQuestions())+1;
         Question theQ = que.getQ(Integer.toString(id));
         return theQ;
     }
