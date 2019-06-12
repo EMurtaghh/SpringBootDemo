@@ -1,40 +1,49 @@
-
-function getInfo(filename){
-    var reader = new FileReader();
-    reader.readAsText(filename);
+function getInfo(filename) {
+    var readInFile;
+    const fs require('fs');
+    fs.readFile(filename, (err, data) => {
+        if (err) throw err;
+        readInFile += (data.toString());
+    })
+    return readInFile;
 }
 
-function remove(){
+function JSONParser(fileToBeParsed) {
+    var JSONParsedFile = JSON.parse(fileToBeParsed);
+    return JSONParsedFile;
+}
+
+function remove() {
     return " ";
 }
 
-function createMulti(){
-    var json= {
-        "id" : "Math Q1",
-        "difficulty" : 1,
-        "questionText" : "2 + 2 = ?",
-        "correctAnswer" : "4",
-        "answers" : [ "2", "4", "5", "6" ]
+function createMulti() {
+    var json = {
+        "id": "Math Q1",
+        "difficulty": 1,
+        "questionText": "2 + 2 = ?",
+        "correctAnswer": "4",
+        "answers": ["2", "4", "5", "6"]
     };
-    
-    return "<p>"+json.questionText+'</p> <input type="radio" th:field="*{plane}" value="Incorrect">'+json.answers[0]
-        +'<br> <input type="radio" th:field="*{plane}" value="Correct">'+json.answers[1]
-        +'<br> <input type="radio" th:field="*{plane}" value="Incorrect">'+json.answers[2]
-        +'<br> <input type="radio" th:field="*{plane}" value="Incorrect">'+json.answers[3]+'<br>';
+
+    return "<p>" + json.questionText + '</p> <input type="radio" th:field="*{plane}" value="Incorrect">' + json.answers[0] +
+        '<br> <input type="radio" th:field="*{plane}" value="Correct">' + json.answers[1] +
+        '<br> <input type="radio" th:field="*{plane}" value="Incorrect">' + json.answers[2] +
+        '<br> <input type="radio" th:field="*{plane}" value="Incorrect">' + json.answers[3] + '<br>';
 }
 
-function createFillIn(){
-    var json= {
-        "id" : "Math Q1",
-        "difficulty" : 1,
-        "questionText" : "2 + 2 = ?",
-        "correctAnswer" : "4",
-        "answers" : [ "2", "4", "5", "6" ]
+function createFillIn() {
+    var json = {
+        "id": "Math Q1",
+        "difficulty": 1,
+        "questionText": "2 + 2 = ?",
+        "correctAnswer": "4",
+        "answers": ["2", "4", "5", "6"]
     };
 
-    return "<p>"+json.questionText+'</p> <input name="structures" list="structures"/> <datalist id="structures"> <option value="'
-        + json.answers[0]+ '"/> <option value="' + json.answers[1] + '"/> <option value="' + json.answers[2]
-        + '"/> <option value="' + json.answers[3] + '"/> </datalist>';
+    return "<p>" + json.questionText + '</p> <input name="structures" list="structures"/> <datalist id="structures"> <option value="' +
+        json.answers[0] + '"/> <option value="' + json.answers[1] + '"/> <option value="' + json.answers[2] +
+        '"/> <option value="' + json.answers[3] + '"/> </datalist>';
 }
 
 function change() {
@@ -77,31 +86,31 @@ function addResponesToRecords(resourceRecords) {
     resourceRecords.push(newResponse);
 }
 
-function displayCheck(value){
-    if(value=="Correct") return '<font color=\"green\">Your answer is: '+ value+ '</font>';
-    if(value=="Incorrect") return '<font color=\"red\">Your answer is: '+ value+ '</font>';
-    if(value=="Unsure") return '<font color=\"#663399\">Your answer is: '+ value+ '</font>';
+function displayCheck(value) {
+    if (value == "Correct") return '<font color=\"green\">Your answer is: ' + value + '</font>';
+    if (value == "Incorrect") return '<font color=\"red\">Your answer is: ' + value + '</font>';
+    if (value == "Unsure") return '<font color=\"#663399\">Your answer is: ' + value + '</font>';
 }
 
-function checkStructure(form){
-    if (form.structures.value=="Bone") return "Correct";
-    if (form.structures.value=="Unsure") return "Unsure";
+function checkStructure(form) {
+    if (form.structures.value == "Bone") return "Correct";
+    if (form.structures.value == "Unsure") return "Unsure";
     return "Incorrect";
 }
 
-function checkDistal(form){
-    if (form.distal.value=="Bone") return "Correct";
-    if (form.distal.value=="Unsure") return "Unsure";
+function checkDistal(form) {
+    if (form.distal.value == "Bone") return "Correct";
+    if (form.distal.value == "Unsure") return "Unsure";
     return "Incorrect";
 }
 
-function checkProximal(form){
-    if (form.proximal.value=="Bone") return "Correct";
-    if (form.proximal.value=="Unsure") return "Unsure";
+function checkProximal(form) {
+    if (form.proximal.value == "Bone") return "Correct";
+    if (form.proximal.value == "Unsure") return "Unsure";
     return "Incorrect";
 }
 
-function checkAnswers(form){
+function checkAnswers(form) {
     document.getElementById('planeCorrect').innerHTML = displayCheck(form.plane.value);
     document.getElementById('structureCorrect').innerHTML = displayCheck(checkStructure(form));
     document.getElementById('proximalCorrect').innerHTML = displayCheck(checkProximal(form));
