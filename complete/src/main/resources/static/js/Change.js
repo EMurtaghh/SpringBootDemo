@@ -1,11 +1,8 @@
 function getInfo(filename) {
-    var reader = new FileReader();
-
-    reader.onload = function(e) {
-        var text = reader.result;
-    };
-    reader.readAsText(filename);
-    return text;
+    var readInFile;
+    FileReader();
+    readInFile = FileReader.readAsText(filename);
+    return readInFile;
 }
 
 function JSONParser(fileToBeParsed) {
@@ -25,7 +22,7 @@ function createMulti() {
         "correctAnswer": "4",
         "answers": ["2", "4", "5", "6"]
     };
-    
+
     return "<p>"+json.questionText+'</p> <input type="radio" th:field="*{plane}" value="Incorrect">'+json.answers[0]
         +'<br> <input type="radio" name="plane" value="Correct">'+json.answers[1]
         +'<br> <input type="radio" name="plane" value="Incorrect">'+json.answers[2]
