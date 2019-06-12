@@ -1,7 +1,7 @@
 function getInfo(filename) {
     var readInFile;
-    FileReader reader = new FileReader();
-    readInFile = reader.readAsText(filename);
+    FileReader();
+    readInFile = FileReader.readAsText(filename);
     return readInFile;
 }
 
