@@ -90,6 +90,10 @@ h5 {
     margin: 10px;
 }
 
+.hide {
+    display: none;
+}
+
 /* ---------------------------------------*
 /* Add spacing to text elements */
 
