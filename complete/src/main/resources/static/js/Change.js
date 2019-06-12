@@ -1,10 +1,7 @@
 function getInfo(filename) {
     var readInFile;
-    const fs require('fs');
-    fs.readFile(filename, (err, data) => {
-        if (err) throw err;
-        readInFile += (data.toString());
-    })
+    FileReader = new FileReader();
+    readInFile = filename.readAsText();
     return readInFile;
 }
 
