@@ -42,6 +42,11 @@ function change() {
     }
 }
 
+// function getImageTask(){
+//     var task = [[${currentTask}]];
+// }
+
+
 function changeQuestions() {
     document.getElementById('image').innerHTML = remove();
     change();
@@ -57,6 +62,14 @@ function changeQuestions() {
     document.getElementById('proximalCorrect').innerHTML = remove();
     document.getElementById('distalCorrect').innerHTML = remove();
     document.getElementById('zoneCorrect').innerHTML = remove();
+}
+
+function addResponesToRecords(resourceRecords) {
+    var newResponse = {
+
+    };
+
+    resourceRecords.push(newResponse);
 }
 
 function displayCheck(value){

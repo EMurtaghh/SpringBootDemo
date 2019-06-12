@@ -12,7 +12,7 @@
     <script type="text/javascript" src="/js/change.js" ></script>
 
     <b id="image">
-        <img src="../static/images/leg.jpg" width="1000" th:src="@{images/leg.jpg}"/>
+    <img src="../static/images/leg.jpg" width="1000" th:src="@{images/leg.jpg}"/>
     </b>
 
     <img id="image2" src="../static/images/horse.jpg" width="1000" th:src="@{images/horse.jpg}"/>
@@ -80,6 +80,10 @@
     <b id="zoneCorrect"> </b>
 
     <br>  </b>
+
+    <script>
+        var task = [[${currentTask}]];
+    </script>
 
     <b id="submitButton">
     <button type="button" onclick="checkAnswers(form)" >
