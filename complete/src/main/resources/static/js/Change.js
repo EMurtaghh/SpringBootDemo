@@ -1,8 +1,11 @@
 function getInfo(filename) {
-    var readInFile;
-    FileReader = new FileReader();
-    readInFile = filename.readAsText();
-    return readInFile;
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+        var text = reader.result;
+    };
+    reader.readAsText(filename);
+    return text;
 }
 
 function JSONParser(fileToBeParsed) {
