@@ -1,4 +1,9 @@
 
+function getInfo(filename){
+    var reader = new FileReader();
+    reader.readAsText(filename);
+}
+
 function remove(){
     return " ";
 }
