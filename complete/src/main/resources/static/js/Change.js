@@ -18,9 +18,9 @@ function createMulti(){
     };
     
     return "<p>"+json.questionText+'</p> <input type="radio" th:field="*{plane}" value="Incorrect">'+json.answers[0]
-        +'<br> <input type="radio" th:field="*{plane}" value="Correct">'+json.answers[1]
-        +'<br> <input type="radio" th:field="*{plane}" value="Incorrect">'+json.answers[2]
-        +'<br> <input type="radio" th:field="*{plane}" value="Incorrect">'+json.answers[3]+'<br>';
+        +'<br> <input type="radio" name="plane" value="Correct">'+json.answers[1]
+        +'<br> <input type="radio" name="plane" value="Incorrect">'+json.answers[2]
+        +'<br> <input type="radio" name="plane" value="Incorrect">'+json.answers[3]+'<br>';
 }
 
 function createFillIn(){
@@ -47,11 +47,6 @@ function change() {
     }
 }
 
-// function getImageTask(){
-//     var task = [[${currentTask}]];
-// }
-
-
 function changeQuestions() {
     document.getElementById('image').innerHTML = remove();
     change();
@@ -69,12 +64,12 @@ function changeQuestions() {
     document.getElementById('zoneCorrect').innerHTML = remove();
 }
 
-function addResponesToRecords(resourceRecords) {
+function addResponesToRecords() {
     var newResponse = {
 
     };
 
-    resourceRecords.push(newResponse);
+    //resourceRecords.push(newResponse);
 }
 
 function displayCheck(value){
