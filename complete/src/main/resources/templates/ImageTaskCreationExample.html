@@ -133,16 +133,18 @@
 
             <!-- Button trigger modal -->
             <div class="col-12 text-center">
-                <button type="button" class="fas fa-arrow-circle-left btn btn-secondary" href="#"></button>
-                <!--
-                <button type="button" class="btn btn-primary" data-toggle="modal" onclick="displayFeedback(generateFeedbackPerQuestion(q11.checked,q21.checked,q32.checked))" data-target="#modal">
-                    Submit
-                </button>
-                -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" onclick="alternateFeedbackGenerator(q11.checked,q21.checked,q32.checked)">
-                    Submit
-                </button>
-                <button type="button" class="fas fa-arrow-circle-right btn btn-secondary" id="toggableButton" href="ImageTaskCreationPage2Example.html"></button>
+                <div class="show">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" onclick="displayFeedback(generateFeedbackPerQuestion(q11.checked,q21.checked,q32.checked))" data-target="#modal">
+                        Submit
+                    </button>
+                </div>
+                <div class="hide">
+                    <button type="button" class="fas fa-arrow-circle-left btn btn-secondary" href="#"></button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" onclick="alternateFeedbackGenerator(q11.checked,q21.checked,q32.checked)">
+                        Submit
+                    </button>
+                    <button type="button" class="fas fa-arrow-circle-right btn btn-secondary" id="toggableButton" href="ImageTaskCreationPage2Example.html"></button>
+                </div>
             </div>
             <br />
             <br />
@@ -183,4 +185,6 @@
     <!-- Extensions JS -->
     <script src="js/extensions.js"></script>
 
-</body></html>
+</body>
+
+</html>

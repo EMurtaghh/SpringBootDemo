@@ -94,6 +94,10 @@ h5 {
     display: none;
 }
 
+.show {
+    display: block;
+}
+
 /* ---------------------------------------*
 /* Add spacing to text elements */
 
