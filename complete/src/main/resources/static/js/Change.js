@@ -14,6 +14,12 @@ function remove() {
     return " ";
 }
 
+function setPlane(type){
+    if(type=="Transverse") return '<p>What plane is this?</p> <input type="radio" name="plane" value="Incorrect"> Longitude<br> <input type="radio" name="plane" value="Correct"> Transverse<br> <input type="radio" name="plane" value="Unsure"> I do not know<br>';
+    return '<p>What plane is this?</p> <input type="radio" name="plane" value="Correct"> Longitude<br> <input type="radio" name="plane" value="Incorrect"> Transverse<br> <input type="radio" name="plane" value="Unsure"> I do not know<br>';
+
+}
+
 function createMulti() {
     var json = {
         "id": "Math Q1",
