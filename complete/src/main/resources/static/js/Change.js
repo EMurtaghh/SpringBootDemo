@@ -1,7 +1,8 @@
 function getInfo(filename) {
     var readInFile;
-    FileReader();
-    readInFile = FileReader.readAsText(filename);
+    var File = new File(filename);
+    var FileReader = new FileReader();
+    readInFile = FileReader.readAsText(File);
     return readInFile;
 }
 
@@ -29,10 +30,10 @@ function createMulti() {
         "answers": ["2", "4", "5", "6"]
     };
 
-    return "<p>"+json.questionText+'</p> <input type="radio" th:field="*{plane}" value="Incorrect">'+json.answers[0]
-        +'<br> <input type="radio" name="plane" value="Correct">'+json.answers[1]
-        +'<br> <input type="radio" name="plane" value="Incorrect">'+json.answers[2]
-        +'<br> <input type="radio" name="plane" value="Incorrect">'+json.answers[3]+'<br>';
+    return "<p>" + json.questionText + '</p> <input type="radio" th:field="*{plane}" value="Incorrect">' + json.answers[0] +
+        '<br> <input type="radio" name="plane" value="Correct">' + json.answers[1] +
+        '<br> <input type="radio" name="plane" value="Incorrect">' + json.answers[2] +
+        '<br> <input type="radio" name="plane" value="Incorrect">' + json.answers[3] + '<br>';
 }
 
 function createFillIn() {
