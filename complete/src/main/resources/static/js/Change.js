@@ -1,5 +1,4 @@
-
-function readJson(url){
+function readJson(url) {
     var request = new XMLHttpRequest();
     request.open("GET", url, false);
     request.send(null);
@@ -7,19 +6,25 @@ function readJson(url){
     return JSON.parse(request.response);
 }
 
-function readQuestion(question){
-    if(question.difficulty==1) document.getElementById('plane').innerHTML = setPlane(question.correctAnswer);
-    if(question.difficulty==2) document.getElementById('structure').innerHTML = createFillIn(question);
-    if(question.difficulty==3) document.getElementById('proximal').innerHTML = remove();
-    if(question.difficulty==4) document.getElementById('zone').innerHTML = remove();
+function readQuestion(question) {
+    if (question.difficulty == 1) document.getElementById('plane').innerHTML = setPlane(question.correctAnswer);
+    if (question.difficulty == 2) document.getElementById('structure').innerHTML = createFillIn(question);
+    if (question.difficulty == 3) document.getElementById('proximal').innerHTML = remove();
+    if (question.difficulty == 4) document.getElementById('zone').innerHTML = remove();
 }
 
 function remove() {
     return " ";
 }
 
-function setPlane(type){
-    if(type=="Transverse") return '<p>What plane is this?</p> <input type="radio" name="plane" value="Incorrect"> Lateral<br> <input type="radio" name="plane" value="Correct"> Transverse<br> <input type="radio" name="plane" value="Unsure"> I do not know<br>';
+function makeQuestion(jsonQuestion) {
+    return (
+        '<b id="question">' + jsonQuestion.questionText + '</b><i id="' + jsonQuestion.id + '"> </i> <div class="form-check"> <input class="form-check-input" type="radio" name="exampleRadios" id="' + (jsonQuestion.id + "1") + '"value="correct"> <label class="form-check-label" for="option1radio">' + jsonQuestion.correctAnswer + '</label> </div> <div class="form-check"> <input class="form-check-input" type="radio" name="exampleRadios" id="' + (jsonQuestion.id + "2") + '" value="incorrect"> <label class="form-check-label" for="option1radio">' + jsonQuestion.answers[0] + '</label></div><div class="form-check"><input class="form-check-input" type="radio" name="exampleRadios" id="' + (jsonQuestion.id + "3") + '" value="incorrect"><label class="form-check-label" for="option1radio">' + jsonQuestion.answers[1] + '</label></div>'
+    )
+}
+
+function setPlane(type) {
+    if (type == "Transverse") return '<p>What plane is this?</p> <input type="radio" name="plane" value="Incorrect"> Lateral<br> <input type="radio" name="plane" value="Correct"> Transverse<br> <input type="radio" name="plane" value="Unsure"> I do not know<br>';
     return '<p>What plane is this?</p> <input type="radio" name="plane" value="Correct"> Lateral<br> <input type="radio" name="plane" value="Incorrect"> Transverse<br> <input type="radio" name="plane" value="Unsure"> I do not know<br>';
 
 }
@@ -37,8 +42,8 @@ function createFillIn(json) {
         '"/> <option value="' + json.answers[3] + '"/> </datalist>';
 }
 
-function reEnableSubmit(){
-    document.getElementById('submitButton').innerHTML = '<button type="button" onclick="checkAnswers(form)">\n'+'Submit\n' + '</button>';
+function reEnableSubmit() {
+    document.getElementById('submitButton').innerHTML = '<button type="button" onclick="checkAnswers(form)">\n' + 'Submit\n' + '</button>';
 }
 
 function change() {
@@ -55,8 +60,8 @@ function changeQuestions() {
     document.getElementById('image').innerHTML = remove();
     change();
 
-    var question= readJson("/nextQuestion")
-    for(var i=0; i<question.length; i++) readQuestion(question.get(i));
+    var question = readJson("/nextQuestion")
+    for (var i = 0; i < question.length; i++) readQuestion(question.get(i));
 
     reEnableSubmit();
 
