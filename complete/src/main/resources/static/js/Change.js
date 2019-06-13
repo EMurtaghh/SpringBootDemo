@@ -1,14 +1,10 @@
-function getInfo(filename) {
-    var readInFile;
-    var File = new File(filename);
-    var FileReader = new FileReader();
-    readInFile = FileReader.readAsText(File);
-    return readInFile;
-}
 
-function JSONParser(fileToBeParsed) {
-    var JSONParsedFile = JSON.parse(fileToBeParsed);
-    return JSONParsedFile;
+function readJson(url){
+    var request = new XMLHttpRequest();
+    request.open("GET", url, false);
+    request.send(null);
+
+    return JSON.parse(request.response);
 }
 
 function remove() {
