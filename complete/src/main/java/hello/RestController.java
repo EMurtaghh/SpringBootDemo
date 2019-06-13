@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class ApiController {
+public class RestController {
 
     ParServer parServer;
 
-    ApiController(){
+    RestController(){
         super();
         parServer = new ParServer();
     }
