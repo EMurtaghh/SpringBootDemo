@@ -4,18 +4,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestionPool {
+public class QuestionPool_v2 {
     List<Question> allQuestions;
     Datastore datastore;
     List<String> allTypes = new ArrayList<>();
 
-    public QuestionPool(Datastore datastoreIn) throws IOException{
+    public QuestionPool_v2(Datastore datastoreIn) throws IOException{
         datastore = datastoreIn;
         datastore.loadQuestions();
         allQuestions = datastore.loadQuestions();
     }
 
-    public QuestionPool(Datastore datastoreIn, List<String> allTypesIn) throws IOException{
+    public QuestionPool_v2(Datastore datastoreIn, List<String> allTypesIn) throws IOException{
         datastore = datastoreIn;
         datastore.loadQuestions();
         allQuestions = datastore.loadQuestions();
