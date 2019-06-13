@@ -10,19 +10,11 @@ public class UserResponse {
 //**makes sense because a new UserResponseSet should be generated with each student
 //or are the questions being asked for a specific userId?
 
-    public UserResponse(String userIdIn, Question questionIn){
+    public UserResponse(String userIdIn, Question questionIn,String responseIn){
         this.userId=userIdIn;
         this.question=questionIn;
         this.questionId=questionIn.getId();
-    }
-
-    /**
-     * set user response
-     * @param responseIn
-     */
-    public void setResponse(String responseIn){
         this.responseText=responseIn;
-
     }
 
     /**
