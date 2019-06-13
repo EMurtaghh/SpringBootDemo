@@ -1,3 +1,6 @@
+var amountOfStructures=0;
+var amountOfAttachments=0;
+
 
 function readJson(url){
     var request = new XMLHttpRequest();
@@ -8,14 +11,61 @@ function readJson(url){
 }
 
 function readQuestion(question){
-    if(question.difficulty==1) document.getElementById('plane').innerHTML = setPlane(question.correctAnswer);
-    if(question.difficulty==2) document.getElementById('structure').innerHTML = createFillIn(question);
-    if(question.difficulty==3) document.getElementById('proximal').innerHTML = remove();
-    if(question.difficulty==4) document.getElementById('zone').innerHTML = remove();
+
+    if(question.difficulty==1) {
+        document.getElementById('plane').innerHTML = setPlane(question.correctAnswer);
+    }
+
+    if(question.difficulty==2) {
+        if (amountOfStructures != 0) {
+            document.getElementById('structure' + amountOfStructures).innerHTML = createFillIn(question);
+        } else {
+            document.getElementById('structure0').innerHTML = createFillIn(question);
+        }
+        amountOfStructures += 1;
+    }
+
+    if(question.difficulty==3) {
+        if (amountOfAttachments != 0) {
+            document.getElementById('attachment' + amountOfAttachments).innerHTML = createFillIn(question);
+        } else {
+            document.getElementById('attachment0').innerHTML = createFillIn(question);
+        }
+        amountOfAttachments += 1;
+    }
+
+    if(question.difficulty==4) {
+        document.getElementById('zone').innerHTML = createMulti(question);
+    }
 }
 
 function remove() {
     return " ";
+}
+
+function clearpage(){
+    document.getElementById('plane').innerHTML = remove();
+    document.getElementById('structure0').innerHTML = remove();
+    document.getElementById('structure1').innerHTML = remove();
+    document.getElementById('structure2').innerHTML = remove();
+    document.getElementById('structure3').innerHTML = remove();
+    document.getElementById('attachment0').innerHTML = remove();
+    document.getElementById('attachment1').innerHTML = remove();
+    document.getElementById('attachment2').innerHTML = remove();
+    document.getElementById('attachment3').innerHTML = remove();
+    document.getElementById('zone').innerHTML = remove();
+
+
+    document.getElementById('planeCorrect').innerHTML = remove();
+    document.getElementById('structure0Correct').innerHTML = remove();
+    document.getElementById('structure1Correct').innerHTML = remove();
+    document.getElementById('structure2Correct').innerHTML = remove();
+    document.getElementById('structure3Correct').innerHTML = remove();
+    document.getElementById('attachment0Correct').innerHTML = remove();
+    document.getElementById('attachment1Correct').innerHTML = remove();
+    document.getElementById('attachment2Correct').innerHTML = remove();
+    document.getElementById('attachment3Correct').innerHTML = remove();
+    document.getElementById('zoneCorrect').innerHTML = remove();
 }
 
 function setPlane(type){
@@ -41,7 +91,7 @@ function reEnableSubmit(){
     document.getElementById('submitButton').innerHTML = '<button type="button" onclick="checkAnswers(form)">\n'+'Submit\n' + '</button>';
 }
 
-function change() {
+function changeImage() {
     var x = document.getElementById("image2");
 
     if (x.style.display === "none") {
@@ -53,18 +103,13 @@ function change() {
 
 function changeQuestions() {
     document.getElementById('image').innerHTML = remove();
-    change();
+    changeImage();
+    clearpage();
 
     var question= readJson("/nextQuestion")
     for(var i=0; i<question.length; i++) readQuestion(question.get(i));
 
     reEnableSubmit();
-
-    document.getElementById('planeCorrect').innerHTML = remove();
-    document.getElementById('structureCorrect').innerHTML = remove();
-    document.getElementById('proximalCorrect').innerHTML = remove();
-    document.getElementById('distalCorrect').innerHTML = remove();
-    document.getElementById('zoneCorrect').innerHTML = remove();
 }
 
 function displayCheck(value) {

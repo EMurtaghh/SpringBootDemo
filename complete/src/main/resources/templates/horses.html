@@ -19,7 +19,7 @@
 
         <img id="image2" src="../static/images/horse.jpg" width="1000" th:src="@{images/horse.jpg}" />
         <script>
-            change();
+            changeImage();
         </script>
 
         <b id="plane">
@@ -30,7 +30,7 @@
         </b>
         <b id="planeCorrect"> </b>
 
-        <b id="structure">
+        <b id="structure0">
             <p>What structure is in the near field?</p>
             <input name="structures" list="structures" />
             <datalist id="structures">
@@ -41,11 +41,20 @@
                 <option value="Unsure" />
             </datalist>
         </b>
-        <b id="structureCorrect"> </b>
+        <b id="structure0Correct"> </b>
 
-        <b id="proximal">
+        <b id="structure1"> </b>
+        <b id="structure1Correct"> </b>
+
+        <b id="structure2"> </b>
+        <b id="structure2Correct"> </b>
+
+        <b id="structure3"> </b>
+        <b id="structure3Correct"> </b>
+
+        <b id="attachment0">
             <p>Whatis the structure's proximal attatchemnt?</p>
-            <input name="proximal" list="structures2" />
+            <input name="attachment0" list="structures2" />
             <datalist id="structures2">
                 <option value="Bone" />
                 <option value="Tendon" />
@@ -54,11 +63,11 @@
                 <option value="Unsure" />
             </datalist>
         </b>
-        <b id="proximalCorrect"> </b>
+        <b id="attachment0Correct"> </b>
 
-        <b id="distal">
+        <b id="attachment1">
             <p>Whatis the structure's distal attatchemnt?</p>
-            <input name="distal" list="structures3" />
+            <input name="attachment1" list="structures3" />
             <datalist id="structures3">
                 <option value="Bone" />
                 <option value="Tendon" />
@@ -67,7 +76,13 @@
                 <option value="Unsure" />
             </datalist>
         </b>
-        <b id="distalCorrect"> </b>
+        <b id="attachment1Correct"> </b>
+
+        <b id="attachment2"> </b>
+        <b id="attachment2Correct"> </b>
+
+        <b id="attachment3"> </b>
+        <b id="attachment3Correct"> </b>
 
         <b id="zone">
             <p>What zone is this?</p>
