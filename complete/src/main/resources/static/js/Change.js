@@ -37,6 +37,10 @@ function createFillIn(json) {
         '"/> <option value="' + json.answers[3] + '"/> </datalist>';
 }
 
+function reEnableSubmit(){
+    document.getElementById('submitButton').innerHTML = '<button type="button" onclick="checkAnswers(form)">\n'+'Submit\n' + '</button>';
+}
+
 function change() {
     var x = document.getElementById("image2");
 
@@ -52,26 +56,15 @@ function changeQuestions() {
     change();
 
     var question= readJson("/nextQuestion")
-    readQuestion(question);
+    for(var i=0; i<question.length; i++) readQuestion(question.get(i));
 
-    document.getElementById('structure').innerHTML = remove();
-    document.getElementById('proximal').innerHTML = remove();
-    document.getElementById('distal').innerHTML = remove();
-    document.getElementById('zone').innerHTML = remove();
+    reEnableSubmit();
 
     document.getElementById('planeCorrect').innerHTML = remove();
     document.getElementById('structureCorrect').innerHTML = remove();
     document.getElementById('proximalCorrect').innerHTML = remove();
     document.getElementById('distalCorrect').innerHTML = remove();
     document.getElementById('zoneCorrect').innerHTML = remove();
-}
-
-function addResponesToRecords() {
-    var newResponse = {
-
-    };
-
-    //resourceRecords.push(newResponse);
 }
 
 function displayCheck(value) {
@@ -99,6 +92,7 @@ function checkProximal(form) {
 }
 
 function checkAnswers(form) {
+
     document.getElementById('planeCorrect').innerHTML = displayCheck(form.plane.value);
     document.getElementById('structureCorrect').innerHTML = displayCheck(checkStructure(form));
     document.getElementById('proximalCorrect').innerHTML = displayCheck(checkProximal(form));

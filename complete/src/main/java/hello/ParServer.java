@@ -9,10 +9,10 @@ import java.util.List;
 public class ParServer {
     private  Logger logger = LogManager.getLogger(this.getClass());
 
-    public Question nextQuestion() {
+    public List<Question> nextQuestion() {
         try {
             List<Question> questionsFromFile = JsonUtil.listFromJsonFile("src/test/resources/author/imageTask.json", Question.class);
-            return questionsFromFile.get(0);
+            return questionsFromFile;
         }
         catch (IOException e){
             logger.error("sample questions not found", e);
