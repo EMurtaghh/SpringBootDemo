@@ -58,16 +58,13 @@ public class UserQuestionSet {
         Question q5 = new Question("5", "How many ounces are in a pound?", 3, "16", ounceA);
         unseenQuestions.add(q5);
 
-
-
-
     }
 
     /**
      *
      * @param questionId
      * @return question
-     * @throws IndexOutOfBoundsException if the index is too high
+     * @throws
      *
      */
     public Question getQ(String questionId) {
