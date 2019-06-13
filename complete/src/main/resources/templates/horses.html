@@ -11,7 +11,7 @@
     <h1>Questions</h1>
     <form action="#" method="post">
 
-        <script type="text/javascript" src="../static/js/Change.js"></script>
+        <script type="text/javascript" src="/js/Change.js"></script>
 
         <b id="image">
             <img src="../static/images/leg.jpg" width="1000" th:src="@{images/leg.jpg}" />
@@ -87,11 +87,7 @@
         <br>
 
         <script>
-            var task = [
-                [$ {
-                    currentTask
-                }]
-            ];
+            var task = "[[${currentTask}]]";
             var JSONtask = getInfo(task);
             var readableJSONTask = JSONParser(JSONtask);
             console.log(readableJSONTask);
