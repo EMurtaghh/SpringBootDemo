@@ -7,40 +7,31 @@ function readJson(url){
     return JSON.parse(request.response);
 }
 
+function readQuestion(question){
+    if(question.difficulty==1) document.getElementById('plane').innerHTML = setPlane(question.correctAnswer);
+    if(question.difficulty==2) document.getElementById('structure').innerHTML = createFillIn(question);
+    if(question.difficulty==3) document.getElementById('proximal').innerHTML = remove();
+    if(question.difficulty==4) document.getElementById('zone').innerHTML = remove();
+}
+
 function remove() {
     return " ";
 }
 
 function setPlane(type){
-    if(type=="Transverse") return '<p>What plane is this?</p> <input type="radio" name="plane" value="Incorrect"> Longitude<br> <input type="radio" name="plane" value="Correct"> Transverse<br> <input type="radio" name="plane" value="Unsure"> I do not know<br>';
-    return '<p>What plane is this?</p> <input type="radio" name="plane" value="Correct"> Longitude<br> <input type="radio" name="plane" value="Incorrect"> Transverse<br> <input type="radio" name="plane" value="Unsure"> I do not know<br>';
+    if(type=="Transverse") return '<p>What plane is this?</p> <input type="radio" name="plane" value="Incorrect"> Lateral<br> <input type="radio" name="plane" value="Correct"> Transverse<br> <input type="radio" name="plane" value="Unsure"> I do not know<br>';
+    return '<p>What plane is this?</p> <input type="radio" name="plane" value="Correct"> Lateral<br> <input type="radio" name="plane" value="Incorrect"> Transverse<br> <input type="radio" name="plane" value="Unsure"> I do not know<br>';
 
 }
 
-function createMulti() {
-    var json = {
-        "id": "Math Q1",
-        "difficulty": 1,
-        "questionText": "2 + 2 = ?",
-        "correctAnswer": "4",
-        "answers": ["2", "4", "5", "6"]
-    };
-
+function createMulti(json) {
     return "<p>" + json.questionText + '</p> <input type="radio" th:field="*{plane}" value="Incorrect">' + json.answers[0] +
         '<br> <input type="radio" name="plane" value="Correct">' + json.answers[1] +
         '<br> <input type="radio" name="plane" value="Incorrect">' + json.answers[2] +
         '<br> <input type="radio" name="plane" value="Incorrect">' + json.answers[3] + '<br>';
 }
 
-function createFillIn() {
-    var json = {
-        "id": "Math Q1",
-        "difficulty": 1,
-        "questionText": "2 + 2 = ?",
-        "correctAnswer": "4",
-        "answers": ["2", "4", "5", "6"]
-    };
-
+function createFillIn(json) {
     return "<p>" + json.questionText + '</p> <input name="structures" list="structures"/> <datalist id="structures"> <option value="' +
         json.answers[0] + '"/> <option value="' + json.answers[1] + '"/> <option value="' + json.answers[2] +
         '"/> <option value="' + json.answers[3] + '"/> </datalist>';
@@ -60,8 +51,10 @@ function changeQuestions() {
     document.getElementById('image').innerHTML = remove();
     change();
 
-    document.getElementById('plane').innerHTML = createMulti();
-    document.getElementById('structure').innerHTML = createFillIn();
+    var question= readJson("/nextQuestion")
+    readQuestion(question);
+
+    document.getElementById('structure').innerHTML = remove();
     document.getElementById('proximal').innerHTML = remove();
     document.getElementById('distal').innerHTML = remove();
     document.getElementById('zone').innerHTML = remove();

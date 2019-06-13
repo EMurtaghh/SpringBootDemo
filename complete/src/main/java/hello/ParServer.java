@@ -11,7 +11,7 @@ public class ParServer {
 
     public Question nextQuestion() {
         try {
-            List<Question> questionsFromFile = JsonUtil.listFromJsonFile("src/test/resources/author/SampleQuestions.json", Question.class);
+            List<Question> questionsFromFile = JsonUtil.listFromJsonFile("src/test/resources/author/imageTask.json", Question.class);
             return questionsFromFile.get(0);
         }
         catch (IOException e){
