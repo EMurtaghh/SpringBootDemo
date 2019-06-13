@@ -43,6 +43,16 @@ function remove() {
     return " ";
 }
 
+function makeQuestion(jsonQuestion) {
+    return '<b id="question">' + jsonQuestion.questionText + '</b><i id="' + jsonQuestion.id + '"> </i> <div class="form-check"> <input class="form-check-input" type="radio" name="exampleRadios" id="' + (jsonQuestion.id + "1") + '"value="correct"> <label class="form-check-label" for="option1radio">' + jsonQuestion.correctAnswer + '</label> </div> <div class="form-check"> <input class="form-check-input" type="radio" name="exampleRadios" id="' + (jsonQuestion.id + "2") + '" value="incorrect"> <label class="form-check-label" for="option1radio">' + jsonQuestion.answers[0] + '</label></div><div class="form-check"><input class="form-check-input" type="radio" name="exampleRadios" id="' + (jsonQuestion.id + "3") + '" value="incorrect"><label class="form-check-label" for="option1radio">' + jsonQuestion.answers[1] + '</label></div>'
+}
+
+function setPlane(type) {
+    if (type == "Transverse") {
+        return '<p>What plane is this?</p> <input type="radio" name="plane" value="Incorrect"> Lateral<br> <input type="radio" name="plane" value="Correct"> Transverse<br> <input type="radio" name="plane" value="Unsure"> I do not know<br>';
+    }
+}
+
 function clearpage(){
     document.getElementById('plane').innerHTML = remove();
     document.getElementById('structure0').innerHTML = remove();
@@ -87,8 +97,8 @@ function createFillIn(json) {
         '"/> <option value="' + json.answers[3] + '"/> </datalist>';
 }
 
-function reEnableSubmit(){
-    document.getElementById('submitButton').innerHTML = '<button type="button" onclick="checkAnswers(form)">\n'+'Submit\n' + '</button>';
+function reEnableSubmit() {
+    document.getElementById('submitButton').innerHTML = '<button type="button" onclick="checkAnswers(form)">\n' + 'Submit\n' + '</button>';
 }
 
 function changeImage() {
@@ -106,8 +116,8 @@ function changeQuestions() {
     changeImage();
     clearpage();
 
-    var question= readJson("/nextQuestion")
-    for(var i=0; i<question.length; i++) readQuestion(question.get(i));
+    var question = readJson("/nextQuestion")
+    for (var i = 0; i < question.length; i++) readQuestion(question.get(i));
 
     reEnableSubmit();
 }
@@ -137,7 +147,6 @@ function checkProximal(form) {
 }
 
 function checkAnswers(form) {
-
     document.getElementById('planeCorrect').innerHTML = displayCheck(form.plane.value);
     document.getElementById('structureCorrect').innerHTML = displayCheck(checkStructure(form));
     document.getElementById('proximalCorrect').innerHTML = displayCheck(checkProximal(form));
