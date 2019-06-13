@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(GreetingController.class)
+@WebMvcTest(WebController.class)
 @TestPropertySource(properties = "logging.level.org.springframework.web=DEBUG")
 public class ApplicationTest {
 

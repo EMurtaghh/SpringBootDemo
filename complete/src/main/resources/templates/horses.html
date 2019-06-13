@@ -85,11 +85,13 @@
 
         <br>
 
+        <b id="json"> </b>
+
+        <br>
+
         <script>
-            var task = "[[${currentTask}]]";
-            var JSONtask = getInfo(task);
-            var readableJSONTask = JSONParser(JSONtask);
-            console.log(readableJSONTask);
+            var question= readJson("/nextQuestion")
+            document.getElementById('json').innerHTML = question.id;
         </script>
 
         <b id="submitButton">
