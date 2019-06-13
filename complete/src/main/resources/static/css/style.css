@@ -90,6 +90,14 @@ h5 {
     margin: 10px;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 /* ---------------------------------------*
 /* Add spacing to text elements */
 

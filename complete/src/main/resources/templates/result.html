@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Horse</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Answers</h1>
+<p th:text="'Your answer 1: ' + ${greeting.id}" />
+<p th:text="'Answer 1: Ultrasonography uses high frequency sound waves which are transmitted from a transducer (probe) into the patient. The characteristics of the image being ultrasounded influence the returning energy back to the transducer. The reflections are processed into an image which is viewed on the screen.'" />
+
+<p th:text="'Your answer 2: ' + ${greeting.content}" />
+<p th:text="'Answer 2: Reproductive breeding exam (cycle check mares, pregnancy exams), Tendons/ligaments, Masses (abscesses, tumors, foreign bodies, puncture wounds), Colic: identify cause of colic (twisted small intestine, enteritis, colitis), Chest: fluid in chest, pneumonia'" />
+
+<p th:text="'Your answer 3: ' + ${greeting.horse}" />
+
+<p th:text="'Your answer 4: ' + ${greeting.ghost}" />
+
+<p th:text="'Your answer 5: ' + ${greeting.number}" />
+
+<p th:text="'Your answer 6: ' + ${greeting.thot}" />
+
+<p th:text="'Your answer 7: ' + ${greeting.bog}" />
+
+<p th:text="'Your answer 8: ' + ${greeting.city}" />
+
+<a href="/next">Next Question</a>
+</body>
+</html>
