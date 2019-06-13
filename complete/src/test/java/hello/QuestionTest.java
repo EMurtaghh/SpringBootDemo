@@ -39,7 +39,9 @@ public class QuestionTest {
         try{
             JsonUtil.toJsonFile("src/test/resources/QuestionToJSONFileTest1.txt", allQuestions);
         }
-        catch(Exception e){}
+        catch(Exception e){
+            fail();
+        }
 
         //load from JSON file
         try{
@@ -50,7 +52,7 @@ public class QuestionTest {
         }
         catch(Exception ee){
             //loading from JSON failed
-            assertTrue(false);
+            fail();
         }
 
     }
